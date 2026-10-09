@@ -1,0 +1,24 @@
+{
+  "name": "model-relay",
+  "displayName": "Model-Relay",
+  "version": "1.0.0",
+  "description": "Switch Claude Code between Anthropic's models and OpenRouter models from a dropdown above the prompt, search OpenRouter's catalog by name, id or type (such as coding), and see which model new sessions will use.",
+  "author": {
+    "name": "James Willis",
+    "email": "james.willis@professmultimedia.ai",
+    "url": "https://github.com/j12will12-professai"
+  },
+  "homepage": "https://github.com/j12will12-professai/model-relay",
+  "repository": "https://github.com/j12will12-professai/model-relay",
+  "license": "MIT",
+  "keywords": ["models", "model switcher", "openrouter", "status line", "dropdown"],
+  "types": "./types/index.d.ts",
+  "userConfig": {
+    "openrouter_api_key": {
+      "type": "string",
+      "title": "OpenRouter API key",
+      "description": "Your key from https://openrouter.ai/settings/keys. Needed only to switch to OpenRouter models. Kept in secure storage, and written to settings.json only while new sessions use OpenRouter.",
+      "sensitive": true
+    }
+  }
+}
