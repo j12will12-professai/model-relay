@@ -2,7 +2,7 @@
 
 **Switch Claude Code between Anthropic's Claude models and OpenRouter models from a dropdown, right above the prompt.**
 
-Version 1.0.0 · MIT license · A Claude Code plugin by James Willis
+Version 1.0.1 · MIT license · A Claude Code plugin by James Willis
 
 Model-Relay lets you choose which model your **new** Claude Code sessions use: Anthropic's Claude models on your normal Claude login, or any model on [OpenRouter](https://openrouter.ai), free or paid. Search OpenRouter's catalog by name, model id or type (such as "coding"), add the models you like to the dropdown, and always see which one is active in the status line.
 
@@ -12,23 +12,27 @@ Model for new sessions: Anthropic (Claude login) ▾ [ Add or remove models ]
 
 ## Quick start
 
-1. **Install** it. Open a **terminal** — not the Claude desktop app's Code tab,
-   which does not run plugin commands — and run:
+1. **Install** it. This takes two commands — **run both, in this order.** Open
+   a **terminal** — not the Claude desktop app's Code tab, which does not run
+   plugin commands — and run:
 
    ```
    claude plugin marketplace add j12will12-professai/model-relay
-   ```
-
-   ```
    claude plugin install model-relay@j12will12-professai
    ```
+
+   The first command tells Claude Code where to find the plugin; the second
+   installs it. Neither does the job alone: the `@j12will12-professai` in the
+   second command names the marketplace that the first one registers, so on
+   its own the second fails with `Plugin "model-relay" not found in
+   marketplace "j12will12-professai"`.
 
    Installing from a terminal puts it in the **user** scope, so it loads in
    every session afterwards, the desktop app's included.
 
    If you are already at a Claude Code prompt in a terminal, the same two steps
    are `/plugin marketplace add j12will12-professai/model-relay` and
-   `/plugin install model-relay@j12will12-professai`.
+   `/plugin install model-relay@j12will12-professai` — again, both of them.
 
 2. **Add your OpenRouter API key** (only needed for OpenRouter models). Run the command below and paste your key from [openrouter.ai/settings/keys](https://openrouter.ai/settings/keys):
 
@@ -180,6 +184,8 @@ Switch back to Anthropic first (`/switchback`), then uninstall the plugin from `
 
 ## Version history
 
+- **1.0.1** (October 29, 2026): corrected the install instructions, which gave
+  slash commands that the desktop app's Code tab refuses.
 - **1.0.0** (October 9, 2026): first release.
 
 ## Support
