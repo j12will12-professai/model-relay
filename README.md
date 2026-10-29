@@ -12,9 +12,36 @@ Model for new sessions: Anthropic (Claude login) ▾ [ Add or remove models ]
 
 ## Quick start
 
-1. **Install** it. This takes two commands — **run both, in this order.** Open
-   a **terminal** — not the Claude desktop app's Code tab, which does not run
-   plugin commands — and run:
+Four steps: get an OpenRouter key, install the plugin, hand it the key, pick a
+model.
+
+1. **Create an OpenRouter account and an API key.** OpenRouter is the service
+   that provides every model here except Anthropic's own, and Model-Relay needs
+   a key from it to reach them. An account is free, and free models don't need
+   any payment details.
+
+   - Sign up at [openrouter.ai/sign-in](https://openrouter.ai/sign-in).
+   - Open [openrouter.ai/settings/keys](https://openrouter.ai/settings/keys)
+     and create a new key.
+   - Give it a name, such as `claude-code`, and **set a credit limit on it.**
+     OpenRouter recommends a limit on every key: a key with no limit lets a
+     leaked key spend your whole balance, auto top-ups included. A small
+     limit is the safe default here, and you can raise it later on the key's
+     own page.
+   - Copy the key and keep it somewhere safe. You'll paste it in step 3. If it
+     ever leaks, delete it on that same page and create another.
+
+   **Free models** — the ones with ids ending in `:free` — work on a new
+   account with no money on it, up to a cap on requests per day that rises
+   once you've bought credits. **Paid models** spend credits, which you add at
+   [openrouter.ai/settings/credits](https://openrouter.ai/settings/credits).
+
+   Skip this step only if you want Model-Relay purely to switch back and forth
+   between Anthropic's Claude models, which needs no key.
+
+2. **Install the plugin.** This takes two commands — **run both, in this
+   order.** Open a **terminal** — not the Claude desktop app's Code tab, which
+   does not run plugin commands — and run:
 
    ```
    claude plugin marketplace add j12will12-professai/model-relay
@@ -34,7 +61,8 @@ Model for new sessions: Anthropic (Claude login) ▾ [ Add or remove models ]
    are `/plugin marketplace add j12will12-professai/model-relay` and
    `/plugin install model-relay@j12will12-professai` — again, both of them.
 
-2. **Add your OpenRouter API key** (only needed for OpenRouter models). Run the command below and paste your key from [openrouter.ai/settings/keys](https://openrouter.ai/settings/keys):
+3. **Give Model-Relay the key** from step 1. Run this and paste the key when it
+   asks:
 
    ```
    claude plugin configure model-relay@j12will12-professai
@@ -43,7 +71,7 @@ Model for new sessions: Anthropic (Claude login) ▾ [ Add or remove models ]
    At a Claude Code prompt in a terminal, the same step is
    `/plugin configure model-relay@j12will12-professai`.
 
-3. **Pick a model** from the dropdown above the prompt, then **start a new session**. A session that's already running keeps the model it started with.
+4. **Pick a model** from the dropdown above the prompt, then **start a new session**. A session that's already running keeps the model it started with.
 
 ## Contents
 
@@ -77,7 +105,7 @@ Only models that can use tools are offered, because Claude Code can't work witho
 ## Requirements
 
 - **Claude Code**, recent enough to load plugin mods. Tested on Windows 11 with Claude Code 2.1.293.
-- **An OpenRouter account and API key**, for OpenRouter models. Free models don't need any credit on the account. You don't need a key to switch back to Anthropic or to search.
+- **An OpenRouter account and API key**, for OpenRouter models ([Quick start](#quick-start) step 1 sets one up). Free models don't need any credit on the account. You don't need a key to switch back to Anthropic or to search.
 - **An internet connection**, to search OpenRouter.
 
 ## Using Model-Relay
