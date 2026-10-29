@@ -12,21 +12,32 @@ Model for new sessions: Anthropic (Claude login) ▾ [ Add or remove models ]
 
 ## Quick start
 
-1. **Install** it. In Claude Code, run:
+1. **Install** it. Open a **terminal** — not the Claude desktop app's Code tab,
+   which does not run plugin commands — and run:
 
    ```
-   /plugin marketplace add j12will12-professai/model-relay
+   claude plugin marketplace add j12will12-professai/model-relay
    ```
 
    ```
-   /plugin install model-relay@j12will12-professai
+   claude plugin install model-relay@j12will12-professai
    ```
+
+   Installing from a terminal puts it in the **user** scope, so it loads in
+   every session afterwards, the desktop app's included.
+
+   If you are already at a Claude Code prompt in a terminal, the same two steps
+   are `/plugin marketplace add j12will12-professai/model-relay` and
+   `/plugin install model-relay@j12will12-professai`.
 
 2. **Add your OpenRouter API key** (only needed for OpenRouter models). Run the command below and paste your key from [openrouter.ai/settings/keys](https://openrouter.ai/settings/keys):
 
    ```
-   /plugin configure model-relay@j12will12-professai
+   claude plugin configure model-relay@j12will12-professai
    ```
+
+   At a Claude Code prompt in a terminal, the same step is
+   `/plugin configure model-relay@j12will12-professai`.
 
 3. **Pick a model** from the dropdown above the prompt, then **start a new session**. A session that's already running keeps the model it started with.
 
@@ -144,8 +155,8 @@ If your `settings.json` already holds an OpenRouter key from switching some othe
 
 | Problem | What to do |
 | --- | --- |
-| No dropdown above the prompt | Start a new session, or run `/reload-plugins`. Check that model-relay is enabled in `/plugin`. |
-| "Set your OpenRouter API key first" | Run `/plugin configure model-relay@j12will12-professai` and paste your key. |
+| No dropdown above the prompt | Start a new session, or run `/reload-plugins`. Check it is enabled with `claude plugin list` in a terminal. |
+| "Set your OpenRouter API key first" | Run `claude plugin configure model-relay@j12will12-professai` in a terminal and paste your key. |
 | The model didn't change | Switches apply to **new** sessions. Start a new one. |
 | A note says the model "isn't described by this version's model catalog" | Expected for OpenRouter models: Claude Code doesn't know their context size, so it keeps conversations within 200k tokens. Nothing is wrong. |
 | A model gives errors after switching | It may be rate-limited, retired, or out of credit on your OpenRouter account. Pick another model, or `/switchback`. |
@@ -158,10 +169,10 @@ If your `settings.json` already holds an OpenRouter key from switching some othe
 Run this in Claude Code to get the latest version:
 
 ```
-/plugin marketplace update j12will12-professai
+claude plugin marketplace update j12will12-professai
 ```
 
-Or have updates arrive automatically: in `/plugin`, go to **Marketplaces**, select **j12will12-professai**, and select **Enable auto-update**.
+Or have updates arrive automatically: at a Claude Code prompt in a terminal, run `/plugin`, go to **Marketplaces**, select **j12will12-professai**, and select **Enable auto-update**.
 
 ## Uninstall
 
